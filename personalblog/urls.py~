@@ -5,8 +5,15 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'personalblog.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    #url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'personalblog.views.index', name='home'),  #Index Page
     url(r'^projects/$', 'personalblog.views.projects', name='projects'),  #Project List Page
+
+    url(r'^adminlogin/$', 'blog.views.login', name='admin'),  #Site Admin Page
+    url(r'^logout/', 'blog.views.logout'), #Logs out the admin
+    url(r'^admin/', 'blog.views.admin'), #Admin view
+    url(r'^$', 'blog.views.addproject', name='addproject'),  #Add Project
+    
+    (r'^blog/', include('blog.urls')),	
 )

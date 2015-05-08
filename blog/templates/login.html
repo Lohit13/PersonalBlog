@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+
+
+{% block body_block %}
+
+<center>
+<br><br><br>
+<section class="projects section" style="width:1000px;">
+    <div class="section-inner">
+        <h2 class="heading">Log In</h2>
+        <div class="content" style="width:300px;">
+
+        {% if error %}
+        <strong>{{error}}</strong><br><br>
+        {% endif %}
+
+            <form action="/blog/adminlogin/" method="post">{% csrf_token %}
+                        <input type="text" id="username"  name="username" class="form-control input-hg" placeholder="Username"><br>
+                        <input type="password" id="password"  name="password" class="form-control input-hg" placeholder="Password"><br>
+                        <input class="btn btn-default" type="submit" id="submit" method="submit" value="Log In"><br><br>
+            </form>
+
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->
+</center>
+
+{% endblock %}

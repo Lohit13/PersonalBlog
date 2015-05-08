@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrapform',
     'bootstrap3',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,6 +57,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'personalblog.urls'
 
 WSGI_APPLICATION = 'personalblog.wsgi.application'
+
+#REDIRECTION URL FOR LOGIN DECORATOR
+LOGIN_URL = '/adminlogin/'
 
 
 # Database
@@ -95,6 +99,7 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS = ( 
 	os.path.join(PROJECT_ROOT, 'templates/'),
+	os.path.join(PROJECT_ROOT, 'blog/templates/'),
 )
 
 STATICFILES_FINDERS = {

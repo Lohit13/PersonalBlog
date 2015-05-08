@@ -35,20 +35,10 @@
      <!-- ******HEADER****** --> 
     <header class="header">
         <div class="container">                       
-            <img class="profile-image img-responsive pull-left" src="{% static "images/profile.jpg" %}" style="border-radius:100%; width:170px; height:170px;" />
-            <div class="profile-content pull-left">
-                <h1 class="name">Lohitaksh Parmar</h1>
-                <h2 class="desc">Developer, Drummer, Dancer</h2>   
-                <ul class="social list-inline">
-                    <li><a href="http://www.twitter.com/Lohit13/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://www.github.com/Lohit13/" target="_blank"><i class="fa fa-github-alt"></i></a></li>                  
-                    <li class="last-item"><a href="http://www.facebook.com/lohitparmar/" target="_blank"><i class="fa fa-facebook"></i></a></li>                 
-                </ul> 
-            </div><!--//profile-->  
-
-            <div class="profile-content pull-right">    
-                
-                  <a href="/"><button type="button" class="btn btn-default btn-lg" href="">
+            <div class="profile-content">
+            <center>
+                <h1 class="name">Welcome to the Admin Panel</h1> 
+                <a href="/"><button type="button" class="btn btn-default btn-lg" href="">
                     Home
                   </button></a>
                   <a href="/projects/"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
@@ -57,15 +47,42 @@
                   <a href="/blog/"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
                     Blog
                   </button></a>
-
-            </div><!--//profile--> 
+                  <a href="/blog/addproject/"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    Add Projects
+                  </button></a>
+                  <a href="#"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    View Projects
+                  </button></a>
+                  <a href="#"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    Add Post
+                  </button></a>
+                  <a href="#"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    View Posts
+                  </button></a>
+                  <a href="/blog/logout/"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    Logout
+                  </button></a>
+                </center>
+            </div><!--//profile-->  
+            <br><br>
+                
 
         </div><!--//container-->
     </header><!--//header-->
 
+{% block body_block %}{% endblock %}
 
-    {% block body_block %}{% endblock %}
-    <!-- ******FOOTER****** --> 
+    <center>
+    <br><br><br>
+    <section class="projects section" style="width:1000px;">
+        <div class="section-inner">
+            <h2 class="heading">YOU THE BOSS!</h2> 
+        </div><!--//section-inner-->                 
+    </section><!--//section-->
+    </center>
+
+
+<!-- ******FOOTER****** --> 
     <footer class="footer">
         <div class="container text-center">
                 <small class="copyright">Cheers!</small>
@@ -84,4 +101,3 @@
     <script type="text/javascript" src="{% static "js/main.js" %}"></script>            
 </body>
 </html> 
-
