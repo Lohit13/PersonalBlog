@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+
+
+{% block body_block %}
+
+<center>
+<br><br><br>
+<section class="projects section" style="width:1000px;">
+    <div class="section-inner">
+        <h2 class="heading">A list of a few projects I have developed</h2>
+        <div class="content">
+            <div class="item row">
+                <a class="col-md-4 col-sm-4 col-xs-12" >
+                <img class="img-responsive project-image" src="{% static "images/projects/Geo-Con.png" %}" alt="project name" />
+                </a>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                    <h3 class="title">Geo-Con</h3>
+                    <p>A social networking and location search website for the travelling community. The location search is crowdsourced by the data posted by the users. This way, the less popular POIs can be discovered.</p>
+                    <p><a class="more-link" href="https://github.com/Lohit13/Geo-Con" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+
+                </div><!--//desc-->                          
+            </div><!--//item-->
+            
+            <div class="item row">
+                <a class="col-md-4 col-sm-4 col-xs-12">
+                <img class="img-responsive project-image" src="{% static "images/projects/word.jpeg" %}" alt="project name" />
+                </a>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                    <h3 class="title">WordCloud - R</h3>
+                    <p>A simple wordcloud package implemented in R-Studio.</p>
+                    <p><a class="more-link" href="https://github.com/Lohit13/wordcloud-R" target="_blank"><i class="fa fa-external-link"></i>Find out more</a></p>
+                </div><!--//desc-->                          
+            </div><!--//item-->
+            
+            <div class="item row">
+                <a class="col-md-4 col-sm-4 col-xs-12" h>
+                <img class="img-responsive project-image" src="{% static "images/projects/arduino.jpeg" %}" alt="project name" />
+                </a>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                    <h3 class="title">Arduino Home Security System</h3>
+                    <p>A home security system based on Arduino microprocessor. It uses a sound and PIR sensor. Activate/Deactivate with a password.</p>
+                    <p><a class="more-link" href="https://github.com/Lohit13/homesecurity" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                </div><!--//desc-->                          
+            </div><!--//item-->                            
+            <div class="item row">
+                <a class="col-md-4 col-sm-4 col-xs-12" href="http://www.iiitd.edu.in/mentorprogram/" target="_blank">
+                <img class="img-responsive project-image" src="{% static "images/projects/stumentor.png" %}"  alt="project name" />
+                </a>
+                <div class="desc col-md-8 col-sm-8 col-xs-12">
+                    <h3 class="title">Student Mentor - IIITD</h3>
+                    <p>Website made for the Student-Mentor program of out college.</p>
+                    <p><a class="more-link" href="https://github.com/Lohit13/mentorprogramiiitd" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                </div><!--//desc-->                          
+            </div><!--//item-->
+            
+            <a class="btn btn-cta-secondary" href="https://www.github.com/Lohit13/" target="_blank">View all on GitHub <i class="fa fa-chevron-right"></i></a>
+            
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->
+</center>
+
+{% endblock %}

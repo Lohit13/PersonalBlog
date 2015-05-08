@@ -1,0 +1,87 @@
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<head>
+    <title>More than just code!</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lohitaksh Parmar - Developer, Drummer, Dancer">
+    <meta name="author" content="Lohitaksh Parmar">     
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="{% static "css/styles.css" %}">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body>
+     <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">                       
+            <img class="profile-image img-responsive pull-left" src="{% static "images/profile.jpg" %}" style="border-radius:100%; width:170px; height:170px;" />
+            <div class="profile-content pull-left">
+                <h1 class="name">Lohitaksh Parmar</h1>
+                <h2 class="desc">Developer, Drummer, Dancer</h2>   
+                <ul class="social list-inline">
+                    <li><a href="http://www.twitter.com/Lohit13/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="https://www.github.com/Lohit13/" target="_blank"><i class="fa fa-github-alt"></i></a></li>                  
+                    <li class="last-item"><a href="http://www.facebook.com/lohitparmar/" target="_blank"><i class="fa fa-facebook"></i></a></li>                 
+                </ul> 
+            </div><!--//profile-->  
+
+            <div class="profile-content pull-right">    
+                
+                  <a href="/"><button type="button" class="btn btn-default btn-lg" href="">
+                    Home
+                  </button></a>
+                  <a href="/projects/"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    Projects
+                  </button></a>
+                  <a href="#"><button type="button" class="btn btn-default btn-lg" aria-expanded="false">
+                    Blog
+                  </button></a>
+
+            </div><!--//profile--> 
+
+        </div><!--//container-->
+    </header><!--//header-->
+
+
+    {% block body_block %}{% endblock %}
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+                <small class="copyright">Cheers!</small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+ 
+    <!-- Javascript -->          
+    <script type="text/javascript" src="{% static "js/jquery-1.11.2.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/jquery-migrate-1.2.1.min.js" %}"></script>
+
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>    
+
+    <script type="text/javascript" src="{% static "js/jquery.rss.min.js" %}"></script> 
+
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static "js/main.js" %}"></script>            
+</body>
+</html> 
+
