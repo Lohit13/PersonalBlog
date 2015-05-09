@@ -59,7 +59,7 @@ ROOT_URLCONF = 'personalblog.urls'
 WSGI_APPLICATION = 'personalblog.wsgi.application'
 
 #REDIRECTION URL FOR LOGIN DECORATOR
-LOGIN_URL = '/adminlogin/'
+LOGIN_URL = '/blog/adminlogin/'
 
 
 # Database
