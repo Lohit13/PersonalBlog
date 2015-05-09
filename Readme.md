@@ -12,12 +12,12 @@ INSTALLATION
 ===
 Assuming you arleady have Django 1.7 and git-core installed
 
--sudo apt-get install python-pip
--sudo pip install --upgrade -r ./requirements.txt
--python manage.py makemigrations
--python manage.py syncdb
--Make a user when promtped during the previous command. These are you login credential for the admin panel
--python manage.py runserver
+1. sudo apt-get install python-pip
+2. sudo pip install --upgrade -r ./requirements.txt
+3. python manage.py makemigrations
+4. python manage.py syncdb
+5. Make a user when promtped during the previous command. These are you login credential for the admin panel
+6. python manage.py runserver
 
 
 
