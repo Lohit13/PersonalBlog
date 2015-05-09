@@ -1,0 +1,33 @@
+{% extends 'admin.html' %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+
+
+{% block body_block %}
+
+<center>
+<br><br><br>
+<section class="projects section" style="width:1000px;">
+    <div class="section-inner">
+        <h2 class="heading">Add Post</h2>
+        <div class="content">
+
+        	<div style="width:500px;">
+	        	<form method="post" action="/blog/addpost/" enctype="multipart/form-data">
+		        	{% csrf_token %}
+                    {{ form.non_field_errors }}
+					{{form|bootstrap}}
+					<br>
+		            <center>
+		            <input class="btn btn-default" type="submit" value="Add Post">
+		            </center>    
+	            </form>   
+			</div>    
+            
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->
+</center>
+
+{% endblock %}

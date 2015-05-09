@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+
+
+{% block body_block %}
+
+<br><br><br>
+
+<div style="margin:0 auto; width:90%;">
+    <div class="row">
+
+        <div class="col-lg-8">
+
+          <section class="projects section">
+                <div class="section-inner">
+                    <div class="content" >
+
+                         <div class="item row">
+                                <h2>{{post.title}}</h2>
+                                <font size="2">{{post.pub_date}}</font><br><br>
+                                {% if post.image %}
+                                <p style="text-align:center;">
+                                <img class="img-responsive project-image" src="/static/images/{{post.image}}" alt="project name" />
+                                </p> <br>
+                                {% endif %}
+                                <p style="text-align:left;">{{post.body}}
+                                </p>
+                                <hr>
+                        </div>    
+                        
+                    </div><!--//content-->  
+                </div><!--//section-inner-->                 
+            </section><!--//section-->
+
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+
+          <section class="projects section">
+                <div class="section-inner">
+                    <h1 class="heading">Filters</h1>
+                    <div class="content">
+
+                        <div class="item row" style=" border-radius: 25px; border: 2px solid #8AC007; padding: 20px;">
+                            <center><strong><font size="5">Tags</font></strong></center><br>
+                            <p style="text-align:left;">
+                            {% if tags %}
+                            <a href="/blog/">all</a>
+                            {% for tag in tags %}
+                                <a href="/blog/view/{{tag.name}}/">{{tag.name}}</a> 
+                            {% endfor %}
+                            {% else %}
+                            No tags found...
+                            {% endif %}
+                            </p>
+                            
+                            
+                                
+                                      
+                        </div><!--//item-->
+                        
+                        <hr>
+                        
+                    </div><!--//content-->  
+                </div><!--//section-inner-->                 
+            </section><!--//section-->
+
+
+        </div>
+
+
+      </div>
+
+</div>
+
+
+{% endblock %}

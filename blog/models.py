@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from time import time
+from datetime import datetime
 
 def get_upload_file_name(instance, filename):
 	return "%s_%s" % (str(time()).replace('.','_'), filename)
@@ -15,6 +16,23 @@ class Project(models.Model):
 
 	def __unicode__(self):
 		return self.title
+
+class Tag(models.Model):
+	name = models.CharField(max_length=100)
+
+	def __unicode__(self):
+		return self.name
+
+class Post(models.Model):
+	title = models.CharField(max_length=500)
+	body = models.TextField()
+	pub_date = models.DateTimeField('date published', default=datetime.now)
+	image = models.ImageField(upload_to=get_upload_file_name, blank=True, null=True)
+	tags = models.TextField(blank=True, null=True) 
+
+	def __unicode__(self):
+		return self.title
+
 
 
 

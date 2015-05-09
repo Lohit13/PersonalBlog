@@ -6,30 +6,120 @@
 
 {% block body_block %}
 
-<center>
 <br><br><br>
-<section class="projects section" style="width:1000px;">
-    <div class="section-inner">
-        <h2 class="heading">BLOG</h2>
-        <div class="content">
 
-            <div class="item row">
-                <a class="col-md-4 col-sm-4 col-xs-12" >
-                <img class="img-responsive project-image" src="{% static "images/projects/Geo-Con.png" %}" alt="project name" />
-                </a>
-                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                    <h3 class="title">Geo-Con</h3>
-                    <p>A social networking and location search website for the travelling community. The location search is crowdsourced by the data posted by the users. This way, the less popular POIs can be discovered.</p>
-                    <p><a class="more-link" href="https://github.com/Lohit13/Geo-Con" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+<div style="margin:0 auto; width:90%;">
+    <div class="row">
 
-                </div><!--//desc-->                          
-            </div><!--//item-->
-            
-            <a class="btn btn-cta-secondary" href="https://www.github.com/Lohit13/" target="_blank">View all on GitHub <i class="fa fa-chevron-right"></i></a>
-            
-        </div><!--//content-->  
-    </div><!--//section-inner-->                 
-</section><!--//section-->
-</center>
+        <div class="col-lg-8">
+
+          <section class="projects section">
+                <div class="section-inner">
+                    <center>
+                    <h1 class="heading">BLOG</h1>
+                    </center>
+                    <div class="content" >
+
+
+                        {% if posts %}
+                        {% for post in posts|slice:"::-1" %} 
+                         <div class="item row">
+                                <h2>{{post.title}}</h2>
+                                <font size="2">{{post.pub_date}}</font>
+                                <p style="text-align:left;">{{post.body|slice:":200"}}<a class="more-link" href="/blog/post/{{post.id}}/" target="_blank"> Read More...</a></p>
+                                <hr>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                            <strong>No posts yet!</strong>
+                        {% endif %}
+                        
+                        <center>
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if posts.has_previous %}
+                                    <a href="?page={{ posts.previous_page_number }}">PREV</a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                                </span>
+
+                                {% if posts.has_next %}
+                                    <a href="?page={{ posts.next_page_number }}">NEXT</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                        </center>
+         
+                    </div><!--//content-->  
+                </div><!--//section-inner-->                 
+            </section><!--//section-->
+
+
+        </div>
+
+
+        <div class="col-lg-4">
+
+
+          <section class="projects section">
+                <div class="section-inner">
+                    <h1 class="heading">Filters</h1>
+                    <div class="content">
+
+                        <div class="item row" style=" border-radius: 25px; border: 2px solid #8AC007; padding: 20px;">
+                            <center><strong><font size="5">Tags</font></strong></center><br>
+                            <p style="text-align:left;">
+                            {% if tags %}
+                            <a href="/blog/">all</a>
+                            {% for tag in tags %}
+                                <a href="/blog/view/{{tag.name}}/">{{tag.name}}</a> 
+                            {% endfor %}
+                            {% else %}
+                            No tags found...
+                            {% endif %}
+                            </p>
+                            
+                            
+                                
+                                      
+                        </div><!--//item-->
+                        
+                        <hr>
+                        
+                    </div><!--//content-->  
+                </div><!--//section-inner-->                 
+            </section><!--//section-->
+
+
+        </div>
+
+
+      </div>
+
+</div>
+
 
 {% endblock %}
+
+
+
+<!--
+
+                        {% if posts %}
+                        {% for post in posts %} 
+                         <div class="item row">
+                                <h2>{{post.title}}</h2>
+                                <font size="2">{{post.pub_date}}</font>
+                                <p style="text-align:left;">{{post.body|slice:":200"}}<a class="more-link" href="#" target="_blank"> Read More...</a></p>
+                        {% endfor %}
+                        {% else %}
+                        <strong>No posts yet!</strong>
+                        {% endif %}
+                           
+                        </div>
+                        <hr>
+
+
+                        -->
