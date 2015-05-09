@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'admin.html' %}
 {% load staticfiles %}
 {% load bootstrap %}
 {% load bootstrap3 %}
@@ -13,18 +13,17 @@
         <h2 class="heading">Add Project</h2>
         <div class="content">
 
-            <div class="item row">
-                <a class="col-md-4 col-sm-4 col-xs-12" >
-                <img class="img-responsive project-image" src="{% static "images/projects/Geo-Con.png" %}" alt="project name" />
-                </a>
-                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                    <h3 class="title">Geo-Con</h3>
-                    <p>A social networking and location search website for the travelling community. The location search is crowdsourced by the data posted by the users. This way, the less popular POIs can be discovered.</p>
-                    <p><a class="more-link" href="https://github.com/Lohit13/Geo-Con" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-
-                </div><!--//desc-->                          
-            </div><!--//item-->
-            
+        	<div style="width:500px;">
+	        	<form method="post" action="/blog/addproject/" enctype="multipart/form-data">
+		        	{% csrf_token %}
+                    {{ form.non_field_errors }}
+					{{form|bootstrap}}
+					<br>
+		            <center>
+		            <input class="btn btn-default" type="submit" value="Add Project">
+		            </center>    
+	            </form>   
+			</div>    
             
         </div><!--//content-->  
     </div><!--//section-inner-->                 

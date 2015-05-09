@@ -13,17 +13,37 @@
         <h2 class="heading">A list of a few projects I have developed</h2>
         <div class="content">
 
+            {% if projects %}
+
+            {% for project in projects %}
+
             <div class="item row">
                 <a class="col-md-4 col-sm-4 col-xs-12" >
-                <img class="img-responsive project-image" src="{% static "images/projects/Geo-Con.png" %}" alt="project name" />
+                {% if project.thumbnail %}
+                <img class="img-responsive project-image" src="/static/images/{{project.thumbnail}}" alt="project name" />
+                {% endif %}
                 </a>
                 <div class="desc col-md-8 col-sm-8 col-xs-12">
-                    <h3 class="title">Geo-Con</h3>
-                    <p>A social networking and location search website for the travelling community. The location search is crowdsourced by the data posted by the users. This way, the less popular POIs can be discovered.</p>
-                    <p><a class="more-link" href="https://github.com/Lohit13/Geo-Con" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                    <h3 class="title">{{project.title}}</h3>
+                    <p>{{project.body}}</p>
+                    <p><a class="more-link" href="{{project.link}}" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
 
-                </div><!--//desc-->                          
-            </div><!--//item-->
+                </div>                          
+            </div>
+
+            {% endfor %}
+
+            {% else %}
+
+            <center>
+	            <strong>
+	            	No projects to show as of now. You can check my github till then!
+	            </strong>
+            </center>
+            <br>
+
+            {% endif %}
+
             
             <a class="btn btn-cta-secondary" href="https://www.github.com/Lohit13/" target="_blank">View all on GitHub <i class="fa fa-chevron-right"></i></a>
             

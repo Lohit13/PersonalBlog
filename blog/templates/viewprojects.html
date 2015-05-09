@@ -1,0 +1,53 @@
+{% extends 'admin.html' %}
+{% load staticfiles %}
+{% load bootstrap %}
+{% load bootstrap3 %}
+
+
+{% block body_block %}
+
+<center>
+<br><br><br>
+<section class="projects section" style="width:1000px;">
+    <div class="section-inner">
+        <h2 class="heading">All Projects</h2>
+        <div class="content">
+
+        	<div class="panel-body">
+                            <div>
+
+                            {% if projects %}
+                            <ul>
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th></th>
+                                    </tr>
+                                    {% for project in projects %}
+                                    <tr>
+                                        <th>{{forloop.counter}}</th>
+                                        <th>{{project.title}}</th>
+                                        <th><a href="/blog/deleteproject/{{project.id}}/">Remove</a></th>
+                                    </tr>
+                                    {% endfor %}
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            </ul>
+                            {% else %}
+                            	<center>
+                            	<strong>
+                            		No projects added as of now.
+                            	</strong>
+                            	</center>
+                            {% endif %}
+                            </div>  
+            
+        </div><!--//content-->  
+    </div><!--//section-inner-->                 
+</section><!--//section-->
+</center>
+
+{% endblock %}

@@ -108,4 +108,6 @@ STATICFILES_FINDERS = {
 
 }
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media/')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles/images/')
+
+MEDIA_URL='/media/'
